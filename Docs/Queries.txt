@@ -1,0 +1,98 @@
+Day 1
+
+rpa vs aa, how to choose tool
+examples where cognitive automation used
+set up own cloud system in amzon aws
+captcha full form!
+workfusion - cognitive, rpa express - but cant do captcha
+provides training in cognitive too
+WorkFusion planning to overcome shortcomings of BP using congnitive automation
+sql server 2014 - supported by all, 2016 - windows 7 doesnt support
+virtual box by oracle- access to vm's
+amazon aws - 1 yr free - 1gb/30gb hdd 
+azure/alibaba cloud/ oracle cloud/ azure ms
+
+
+care@jio.com
+nits.slimshady@gmail.com
+Hrishika_786
+
+
+Class 3
+show/close workbookwill save save the data w/o write collection
+create a new workbook and writr data to it without closing old workbook first
+read from two excel and write to one
+need for exporting the output variable when saving workbook as
+
+
+
+
+class 4
+PDF conversion using ms word object
+Windows Automation - calculator , 1+2=3 , parametrized in object studio
+
+multiple pages in process so that we can segregate functionality if it becomes too big, for eg - excel-grading system demo
+
+-we can select multiple items n do a cut
+
+-do grading system demo in pages(modularzation)/ screenshot of new page stage
+
+
+-PDF -- MS Wod VBO -- number handle CREATE_INSTANCE() -- text documentName OPEN(handle,FileName) -- void EXPORT_PDF(documentName,handle,FileName)
+-twilio
+-process options vs page options
+-oracle virtual box
+-options in object studio differ from process studio - read,write,navigate,code,wait
+-F1 for help - read through all the stages
+--attach screenshot of Action Popup, to get familiar with options
+
+-configure all the elements with Application Modeller, link all the functionality of application modeller in different stages of object studio, call these pages from the process studio
+
+--blue prism calculator win 10 issue - identify doesnt work
+
+-do application modeller - new exe/browser which is already running (attach usage - pop up that comes when we try to do mstsc, that pop up doesnt have executable file)
+
+-application modeller , all screenshots
+
+- Navigate stage options for windows appended
+- use highlight and identify
+- Action dropdown values for an element |Element|Params|Action|Input Set|
+
+ -global mouse click(X,Y,Mouse Button) vs global mouse click centre(Mouse Button)
+ - start/end properties of calculator object page (to pass to next page)
+ |Name|Datatype|Description|Store In|
+ 
+ corresponding action property
+ |Name|Datatype|Value|
+
+ - additonal windows example using the training order system- involves exception handling
+ 
+create whole flow chart first - visualize 
+
+
+class 5
+Topics -
+Web Automation - facebook - uname/pwd/login
+
+
+-Pages in the object must be published to show up in Action drop down values of business object from process studio
+-web automation of facebook - uname/pwd/login
+-element attributes in the application modeller - always remove Parent URL, could change/ also when we are parametrizing - eg curreny from n to gets appended in url
+-some of the operations in the Action dropdown 
+-Options included under Actions dropdown of the custom web object we created are -
+
+Element|Params|Action|Input Set
+
+
+
+
+
+
+
+
+
+
+
+
+
+Topics covered | Others| 

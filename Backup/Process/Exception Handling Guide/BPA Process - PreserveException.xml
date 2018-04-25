@@ -1,0 +1,104 @@
+﻿<process name="PreserveException" version="1.0" bpversion="5.0.10.0" narrative="" preferredid="4dc7355d-971f-47ba-84b3-f7a682a36f0c">
+  <view>
+    <camerax>0</camerax>
+    <cameray>-46</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="b1cd9e2d-473b-4f97-b4ea-b8fad66c26e3" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-555</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="403bd26d-d5e5-4882-98fe-af5581997fdc" name="Start" type="Start">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-315</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>dbdc0c26-93f3-4174-bb45-680d8b164855</onsuccess>
+  </stage>
+  <stage stageid="d7fceb71-5257-4519-8aa9-696118bc449f" name="End" type="End">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="99677ecf-4941-40a7-a549-e8eb041f04ef" name="Recover1" type="Recover">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>fab6c2f9-8e61-41c4-9581-8e2557f71ffe</onsuccess>
+  </stage>
+  <stage stageid="1d6df632-5795-4e2a-a3cf-f89ac907731a" name="Resume1" type="Resume">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>d7fceb71-5257-4519-8aa9-696118bc449f</onsuccess>
+  </stage>
+  <stage stageid="dbdc0c26-93f3-4174-bb45-680d8b164855" name="Exception1" type="Exception">
+    <narrative>
+    </narrative>
+    <displayx>-240</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="System Exception" detail="&quot;Details of System Exception&quot;" />
+  </stage>
+  <stage stageid="e873c87c-fda3-41c9-b3da-27a7c4a96794" name="Stage2" type="Block">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-315</displayx>
+    <displayy>-255</displayy>
+    <displaywidth>480</displaywidth>
+    <displayheight>135</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="fab6c2f9-8e61-41c4-9581-8e2557f71ffe" name="Decision1" type="Decision">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="5&gt;6" />
+    <ontrue>1d6df632-5795-4e2a-a3cf-f89ac907731a</ontrue>
+    <onfalse>f35a876e-f4d7-49e3-b6ec-59bc40367116</onfalse>
+  </stage>
+  <stage stageid="f35a876e-f4d7-49e3-b6ec-59bc40367116" name="Re-Throw" type="Exception">
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="Business Exception" detail="&quot;second exception&quot;" usecurrent="yes" />
+  </stage>
+</process>

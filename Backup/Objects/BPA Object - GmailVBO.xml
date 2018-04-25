@@ -1,0 +1,282 @@
+﻿<process name="GmailVBO" version="1.0" bpversion="5.0.10.0" narrative="object to perform gmail operations" type="object" runmode="Exclusive" preferredid="05301461-6c71-4f08-bb3f-36dd475c4918">
+  <appdef>
+    <element name="Application Root">
+      <id>cb0b8dd6-fa7b-4350-a076-0584596b5e91</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="4e3bd834-5003-46e3-b0e7-8fa9cbeae52c" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="3d88b702-87a4-4473-b4a8-f55c99215952" type="Normal" published="True">
+    <name>Send Email</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="2a698ddb-1449-43f3-84e9-b0fc339ad285" name="Start" type="Start">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>95147592-7573-4a3b-8d11-0720fb7a269e</onsuccess>
+  </stage>
+  <stage stageid="a214656e-fbda-48e9-b818-cf8c300e9307" name="End" type="End">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9915aa50-a20c-44fa-9e45-cffa5e66e624" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <references>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="ab09c5b5-8022-4d17-b1f6-ab4e7ff3b4ef" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>4e3bd834-5003-46e3-b0e7-8fa9cbeae52c</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="3bf34ac3-814e-4ad6-8bcf-8c58c9d31537" name="Start" type="Start">
+    <subsheetid>4e3bd834-5003-46e3-b0e7-8fa9cbeae52c</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>e7c982ec-2c0e-475f-b235-88208fa3d990</onsuccess>
+  </stage>
+  <stage stageid="e7c982ec-2c0e-475f-b235-88208fa3d990" name="End" type="End">
+    <subsheetid>4e3bd834-5003-46e3-b0e7-8fa9cbeae52c</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="ec3804bd-05f8-48b8-91c5-29770f6a5c01" name="Send Email" type="SubSheetInfo">
+    <subsheetid>3d88b702-87a4-4473-b4a8-f55c99215952</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="92240f40-cde9-4266-96a5-987c704fb4a2" name="Start" type="Start">
+    <subsheetid>3d88b702-87a4-4473-b4a8-f55c99215952</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>3147cdd9-1cce-4314-b62d-ad350abd6611</onsuccess>
+  </stage>
+  <stage stageid="3a22b552-b384-4e23-b857-8fabc6df65e2" name="End" type="End">
+    <subsheetid>3d88b702-87a4-4473-b4a8-f55c99215952</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="f38621d3-4d18-4f54-b93a-9daf7f23be0c" name="Note1" type="Note">
+    <subsheetid>4e3bd834-5003-46e3-b0e7-8fa9cbeae52c</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9303c35c-f791-4e8a-a00b-67fe56d9eba8" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="3147cdd9-1cce-4314-b62d-ad350abd6611" name="Send Email" type="Action">
+    <subsheetid>3d88b702-87a4-4473-b4a8-f55c99215952</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>30</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="From" narrative="The email address of the sender." expr="[Username]" />
+      <input type="text" name="To" narrative="The email address of the recipient. To address multiple recipients use the format &quot;john.smith@example.com, henry.jones@example.com&quot; OR &quot;John Smith &lt;john.smith@example.com&gt;, Henry Jones &lt;henry.jones@example.com&gt;&quot;." expr="&quot;nitish.ravindran@gmail.com,finance.nitish@gmail.com&quot;" />
+      <input type="text" name="Subject" narrative="The subject of the email." expr="&quot;Test Message&quot;" />
+      <input type="text" name="Body" narrative="The body of the email." expr="&quot;&#xA;&lt;HTML&gt;&#xA;&#xA;&lt;HEAD&gt;&#xA;&#xA;&lt;TITLE&gt;Your Title Here&lt;/TITLE&gt;&#xA;&#xA;&lt;/HEAD&gt;&#xA;&#xA;&lt;BODY BGCOLOR='FFFFFF'&gt;&#xA;&#xA;&lt;CENTER&gt;&lt;IMG SRC='clouds.jpg' ALIGN='BOTTOM'&gt; &lt;/CENTER&gt;&#xA;&#xA;&lt;HR&gt;&#xA;&#xA;&lt;a href='http://somegreatsite.com'&gt;Link Name&lt;/a&gt;&#xA;&#xA;is a link to another nifty site&#xA;&#xA;&lt;H1&gt;This is a Header&lt;/H1&gt;&#xA;&#xA;&lt;H2&gt;This is a Medium Header&lt;/H2&gt;&#xA;&#xA;Send me mail at &lt;a href='mailto:support@yourcompany.com'&gt;&#xA;&#xA;support@yourcompany.com&lt;/a&gt;.&#xA;&#xA;&lt;P&gt; This is a new paragraph!&#xA;&#xA;&lt;P&gt; &lt;B&gt;This is a new paragraph!&lt;/B&gt;&#xA;&#xA;&lt;BR&gt; &lt;B&gt;&lt;I&gt;This is a new sentence without a paragraph break, in bold italics.&lt;/I&gt;&lt;/B&gt;&#xA;&#xA;&lt;HR&gt;&#xA;&#xA;&lt;/BODY&gt;&#xA;&#xA;&lt;/HTML&gt;&#xA;&quot;&#xA;" />
+      <input type="collection" name="Attachments" narrative="A Collection containing a list of files to add to the email as attachments." expr="[Attachment List]" />
+      <input type="flag" name="BodyIsHTML" narrative="Indicates if the body should be sent as HTML" expr="True" />
+    </inputs>
+    <onsuccess>3a22b552-b384-4e23-b857-8fabc6df65e2</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Send Message" />
+  </stage>
+  <stage stageid="95147592-7573-4a3b-8d11-0720fb7a269e" name="Configure gmail" type="Action">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Username" narrative="The POP3 and SMTP Username" expr="[Username]" />
+      <input type="password" name="Password" narrative="The POP3 and SMTP Password" expr="[Password]" />
+      <input type="text" name="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>a214656e-fbda-48e9-b818-cf8c300e9307</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="9786ceaa-74cb-49d1-b73d-1394ecc99f00" name="Username" type="Data">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>405</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">nits.slimshady@gmail.com</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="966a1a14-46e5-4d77-ac55-293de7990ddc" name="Password" type="Data">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>390</displayx>
+    <displayy>0</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>password</datatype>
+    <initialvalueenc>50,0,25,81,25,92,21,58,118,77,66</initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4c0334bd-e21e-4259-86db-72907777dc9e" name="Username" type="Data">
+    <subsheetid>3d88b702-87a4-4473-b4a8-f55c99215952</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>405</displayx>
+    <displayy>-90</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">nits.slimshady@gmail.com</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9076cdd9-50a5-4572-815d-09d8b4e47c64" name="Attachment List" type="Collection">
+    <subsheetid>3d88b702-87a4-4473-b4a8-f55c99215952</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>375</displayx>
+    <displayy>75</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Path" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Path" type="text" value="F:\Selenium\RPA\Training\HandsOn\Day 6 - Web and Email Attachments\Attach1.txt" />
+      </row>
+      <row>
+        <field name="Path" type="text" value="F:\Selenium\RPA\Training\HandsOn\Day 6 - Web and Email Attachments\Attach2.txt" />
+      </row>
+    </initialvalue>
+  </stage>
+</process>

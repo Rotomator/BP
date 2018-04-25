@@ -1,0 +1,260 @@
+﻿<process name="SearchProcess" version="1.0" bpversion="5.0.10.0" narrative="" preferredid="c9cf7a13-ad37-4c0f-96c8-a2bc540f73ca">
+  <view>
+    <camerax>0</camerax>
+    <cameray>42</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="251ae262-7bc1-4c1a-a1d4-4f4c1295eee1" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>021db872-a76f-461c-aaad-4b4823ceae98</onsuccess>
+  </stage>
+  <stage stageid="9b1e526f-4f80-4a06-9a8b-474a3d032e55" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="35d0b3da-0100-4440-be13-1062688f8d18" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="021db872-a76f-461c-aaad-4b4823ceae98" name="Find cloth" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Search Text" expr="[Search Text]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Result Found" narrative="boolean value whether search shows valid results" stage="Result Found" />
+    </outputs>
+    <onsuccess>e59c60d0-c16b-48d7-b466-49082561750b</onsuccess>
+    <resource object="SearchWithExceptionHandling" action="Search" />
+  </stage>
+  <stage stageid="43fbef5d-a651-4274-b5a6-fee5b2d0fc21" name="Result Found" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-435</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e59c60d0-c16b-48d7-b466-49082561750b" name="Decision1" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[Result Found]=True" />
+    <ontrue>a2ceeb93-d199-4a56-94a6-4821fd4af644</ontrue>
+    <onfalse>1fd66c77-ca18-42fb-a633-df952aa21e1a</onfalse>
+  </stage>
+  <stage stageid="38f8c180-53b8-4402-9faf-749ebc4f25a2" name="Final Status" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-465</displayx>
+    <displayy>105</displayy>
+    <displaywidth>240</displaywidth>
+    <displayheight>120</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a2ceeb93-d199-4a56-94a6-4821fd4af644" name="Calc1" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>105</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>9b1e526f-4f80-4a06-9a8b-474a3d032e55</onsuccess>
+    <calculation expression="&quot;Search Successful&quot;" stage="Final Status" />
+  </stage>
+  <stage stageid="1fd66c77-ca18-42fb-a633-df952aa21e1a" name="Calc1" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>9b1e526f-4f80-4a06-9a8b-474a3d032e55</onsuccess>
+    <calculation expression="&quot;Search was not Successful&quot;" stage="Final Status" />
+  </stage>
+  <stage stageid="153892fd-3bac-48a6-9e22-e6cab9fc273f" name="Search Text" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-420</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve"> bvbvnv</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="0eb05742-f107-4e70-a80c-66745943c593" name="Recover1" type="Recover">
+    <narrative>
+    </narrative>
+    <displayx>300</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>55ace7ce-b2fe-46e7-a263-32952989e1aa</onsuccess>
+  </stage>
+  <stage stageid="c65f59a6-ff9d-4673-83f6-e8172fc8c826" name="Retry Count" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>630</displayx>
+    <displayy>90</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>3</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="4ae112e7-b397-40c3-99d4-cde69fe3cba5" name="Current Attempt Count" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>630</displayx>
+    <displayy>165</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>1</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="257d625b-072e-4f2d-ae10-f8acdade1790" name="Stage2" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>450</displaywidth>
+    <displayheight>75</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="55ace7ce-b2fe-46e7-a263-32952989e1aa" name="Should Retry ?" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>255</displayx>
+    <displayy>90</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[Current Attempt Count]&lt;[Retry Count]" />
+    <ontrue>ddadf71e-a2a6-4d82-b1e4-610bcd39e643</ontrue>
+    <onfalse>726ed9e1-950c-4cd7-afa3-7e512e437fa7</onfalse>
+  </stage>
+  <stage stageid="5ce2f9cf-c9b4-4b06-bac7-5b4c61698913" name="Update Retry Count" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>135</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>021db872-a76f-461c-aaad-4b4823ceae98</onsuccess>
+    <calculation expression="[Current Attempt Count]+1" stage="Current Attempt Count" />
+  </stage>
+  <stage stageid="c5be819e-1135-4394-895e-f53389456126" name="Clean Up" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>255</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>5ce2f9cf-c9b4-4b06-bac7-5b4c61698913</onsuccess>
+    <resource object="SearchWithExceptionHandling" action="ResetApplicationState" />
+  </stage>
+  <stage stageid="e23bbfd9-0114-4699-a0c1-64ee210485f1" name="Anchor1" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>540</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>c5be819e-1135-4394-895e-f53389456126</onsuccess>
+  </stage>
+  <stage stageid="f2359801-aee4-414e-ba1a-36820a450f08" name="Resume Stage to destroy exception" type="Resume">
+    <narrative>
+    </narrative>
+    <displayx>480</displayx>
+    <displayy>90</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>e23bbfd9-0114-4699-a0c1-64ee210485f1</onsuccess>
+  </stage>
+  <stage stageid="726ed9e1-950c-4cd7-afa3-7e512e437fa7" name="Throw" type="Exception">
+    <narrative>
+    </narrative>
+    <displayx>255</displayx>
+    <displayy>225</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="" detail="" usecurrent="yes" />
+  </stage>
+  <stage stageid="ddadf71e-a2a6-4d82-b1e4-610bcd39e643" name="Print Exception" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>360</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f2359801-aee4-414e-ba1a-36820a450f08</onsuccess>
+    <calculation expression="ExceptionDetail()" stage="Exception Detail" />
+  </stage>
+  <stage stageid="82c368fc-615a-4be5-9564-f8bf22b09152" name="Exception Detail" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>600</displayx>
+    <displayy>270</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>150</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

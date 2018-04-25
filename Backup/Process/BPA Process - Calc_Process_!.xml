@@ -1,0 +1,111 @@
+﻿<process name="Calc_Process_!" version="1.0" bpversion="5.0.10.0" narrative="first process - function  of  calcuator" preferredid="27bb99d5-a0fd-4396-8378-f9d6eac27602">
+  <view>
+    <camerax>-79</camerax>
+    <cameray>-45</cameray>
+    <zoom version="2">1.5625</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="35b603f8-e4eb-418b-83fd-8ca245ad0809" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>7788f2ac-886b-4b85-9a58-ec3ef955c9f0</onsuccess>
+  </stage>
+  <stage stageid="99e62564-eaab-4bfe-be12-6dc7119d8bab" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="74a1eab3-0d21-4839-a302-b6c56e2c00cc" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-270</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="7788f2ac-886b-4b85-9a58-ec3ef955c9f0" name="Addition" type="Calculation">
+    <narrative>sum of two numbers</narrative>
+    <displayx>-75</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f17a3921-a483-4e4f-8884-5f72f905322c</onsuccess>
+    <calculation expression="[Number 1] + [Number 2]" stage="sum" />
+  </stage>
+  <stage stageid="a180c213-8572-4106-8360-dafda76a49d7" name="sum" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>120</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9a66ba9f-7894-4c14-a659-3b0820cd5cca" name="Number 1" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>120</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>100</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9a22a7fa-3b46-4363-a0fc-fc8528de03ec" name="Number 2" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>120</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>50</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f17a3921-a483-4e4f-8884-5f72f905322c" name="Division" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b7934275-d9e4-45df-893c-4ffe4bdbd20b</onsuccess>
+    <calculation expression="[sum] / [Number 2]" stage="Number 1" />
+  </stage>
+  <stage stageid="b7934275-d9e4-45df-893c-4ffe4bdbd20b" name="Multi1" type="MultipleCalculation">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>99e62564-eaab-4bfe-be12-6dc7119d8bab</onsuccess>
+    <steps>
+      <calculation expression="[Number 1] + [Number 2]" stage="sum" />
+      <calculation expression="[sum] / [Number 2]" stage="Number 2" />
+    </steps>
+  </stage>
+</process>

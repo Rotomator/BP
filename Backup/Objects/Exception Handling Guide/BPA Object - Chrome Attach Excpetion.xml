@@ -1,0 +1,332 @@
+﻿<process name="Chrome Attach Excpetion" version="1.0" bpversion="5.0.10.0" narrative="" type="object" runmode="Exclusive" preferredid="2a43cf99-5571-4ad4-a935-766c8668178a">
+  <appdef>
+    <element name="Chrome">
+      <id>8b43cff6-afce-4321-8ac4-fee7c20331bb</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+    <apptypeinfo>
+      <id>Win32Launch</id>
+      <parameters>
+        <parameter>
+          <name>Path</name>
+          <value>"C:\Program Files\internet explorer\iexplore.exe"</value>
+        </parameter>
+        <parameter>
+          <name>CommandLineParams</name>
+          <value>
+          </value>
+        </parameter>
+        <parameter>
+          <name>WorkingDirectory</name>
+          <value>
+          </value>
+        </parameter>
+        <parameter>
+          <name>NonInvasive</name>
+          <value>True</value>
+        </parameter>
+        <parameter>
+          <name>ProcessMode</name>
+          <value>Internal</value>
+        </parameter>
+      </parameters>
+    </apptypeinfo>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="d7fcd37e-fec3-4438-8d79-30bdc92a6c67" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="2516d918-4d55-48a4-81fe-e3065ef951c2" type="Normal" published="False">
+    <name>Action 1</name>
+    <view>
+      <camerax>-570</camerax>
+      <cameray>-60</cameray>
+      <zoom version="2">2.8125</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="2b1793cf-21fa-4025-b694-711220275c4f" name="Start" type="Start">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>73db3307-bb15-43ef-89ef-c9860d2cf1d9</onsuccess>
+  </stage>
+  <stage stageid="73db3307-bb15-43ef-89ef-c9860d2cf1d9" name="End" type="End">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="27612a4b-d8ed-4e2b-ad62-9a110057eb0e" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <references>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="38c63780-d261-4426-a3b3-70f906670e6a" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>d7fcd37e-fec3-4438-8d79-30bdc92a6c67</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="367629e0-e53f-4091-9aea-e86a307a4781" name="Start" type="Start">
+    <subsheetid>d7fcd37e-fec3-4438-8d79-30bdc92a6c67</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>0d1e77a6-bd65-40d5-a334-fe89c7c23eb1</onsuccess>
+  </stage>
+  <stage stageid="0d1e77a6-bd65-40d5-a334-fe89c7c23eb1" name="End" type="End">
+    <subsheetid>d7fcd37e-fec3-4438-8d79-30bdc92a6c67</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="5046c45a-5309-447e-9a20-eae4a08031ce" name="Action 1" type="SubSheetInfo">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-840</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="4a83cce1-6eb4-4263-8f89-22810bedec38" name="Note1" type="Note">
+    <subsheetid>d7fcd37e-fec3-4438-8d79-30bdc92a6c67</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="1ffb2801-0616-450b-a1dd-4df33ad8176a" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="97a04026-8b97-4f16-8239-a1bc6f613cac" name="Start" type="Start">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-585</displayx>
+    <displayy>-255</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>23a70992-2937-4a8f-bab7-1c262d4ba289</onsuccess>
+  </stage>
+  <stage stageid="f3a528f5-2351-4d3b-8c9b-728343a45c50" name="End" type="End">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-585</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="23a70992-2937-4a8f-bab7-1c262d4ba289" name="Attach" type="Navigate">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-585</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f3a528f5-2351-4d3b-8c9b-728343a45c50</onsuccess>
+    <step>
+      <element id="8b43cff6-afce-4321-8ac4-fee7c20331bb" />
+      <action>
+        <id>AttachApplication</id>
+        <arguments>
+          <argument>
+            <id>WindowTitlesCollection</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>WindowTitle</id>
+            <value>"MSN India | Hotmail, Outlook, Skype, news, photos &amp; videos - Internet Explorer"</value>
+          </argument>
+          <argument>
+            <id>ProcessName</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>ChildIndex</id>
+            <value>1</value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="263c85e1-3eb9-44cb-9603-eea3baf21329" name="Recover1" type="Recover">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-390</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>0327c190-11ee-4676-ac5a-3f0a9f42c853</onsuccess>
+  </stage>
+  <stage stageid="f457c564-052c-4d3e-ac50-2369b6bf3bed" name="Resume1" type="Resume">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-390</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>ad65c0a1-ca39-4267-8ee9-581c4ed3aabd</onsuccess>
+  </stage>
+  <stage stageid="0327c190-11ee-4676-ac5a-3f0a9f42c853" name="Note3" type="Note">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>couldnt attach because notepad is probably not launched</narrative>
+    <displayx>-390</displayx>
+    <displayy>-120</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f457c564-052c-4d3e-ac50-2369b6bf3bed</onsuccess>
+  </stage>
+  <stage stageid="ad65c0a1-ca39-4267-8ee9-581c4ed3aabd" name="Launch" type="Navigate">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-495</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f3a528f5-2351-4d3b-8c9b-728343a45c50</onsuccess>
+    <step>
+      <element id="8b43cff6-afce-4321-8ac4-fee7c20331bb" />
+      <action>
+        <id>Launch</id>
+        <arguments>
+          <argument>
+            <id>Path</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>CommandLineParams</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>WorkingDirectory</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>NonInvasive</id>
+            <value>
+            </value>
+          </argument>
+          <argument>
+            <id>ProcessMode</id>
+            <value>
+            </value>
+          </argument>
+        </arguments>
+      </action>
+    </step>
+  </stage>
+  <stage stageid="73b00332-35f5-43a6-9896-392922e19440" name="Coll1" type="Collection">
+    <subsheetid>2516d918-4d55-48a4-81fe-e3065ef951c2</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-510</displayx>
+    <displayy>-165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Window Title" type="text" description="Untitled - Notepad" />
+    </collectioninfo>
+  </stage>
+</process>

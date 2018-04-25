@@ -1,0 +1,142 @@
+﻿<process name="WindowsAutomation-Calculator" version="1.0" bpversion="5.0.10.0" narrative="" preferredid="a0a7e989-cc25-4a2c-8e02-83215fd994b6">
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="ac068912-30b8-4716-b3d6-c77cfdec617e" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b3595ce2-a242-49ee-b6dd-06a6d8e48265</onsuccess>
+  </stage>
+  <stage stageid="2f4a424c-ec99-43d7-9103-ab7fb940c710" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="c339307b-f5ea-42af-bc19-b3d5c016a6ca" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="b3595ce2-a242-49ee-b6dd-06a6d8e48265" name="Open" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>5ddc66de-a4c1-4d00-bc11-e0f2cf298383</onsuccess>
+    <resource object="CalculatorVBO" action="Open" />
+  </stage>
+  <stage stageid="86f0d90d-1e93-4459-9ccf-8561e1868a5f" name="Close" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>225</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>2f4a424c-ec99-43d7-9103-ab7fb940c710</onsuccess>
+    <resource object="CalculatorVBO" action="Close" />
+  </stage>
+  <stage stageid="5ddc66de-a4c1-4d00-bc11-e0f2cf298383" name="Press 1" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Button Text" narrative="text of button to be clicked" expr="1" />
+    </inputs>
+    <onsuccess>6e7e8019-3794-4f96-9b53-82821dd082c8</onsuccess>
+    <resource object="CalculatorVBO" action="Click Button (Requires Button Text)" />
+  </stage>
+  <stage stageid="3d060092-b18d-43c4-864b-8f3b9dd2be10" name="Press 2" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Button Text" narrative="text of button to be clicked" expr="2" />
+    </inputs>
+    <onsuccess>09110126-2a6b-441c-85fe-e968bedf69cb</onsuccess>
+    <resource object="CalculatorVBO" action="Click Button (Requires Button Text)" />
+  </stage>
+  <stage stageid="6e7e8019-3794-4f96-9b53-82821dd082c8" name="Press +" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Button Text" narrative="text of button to be clicked" expr="&quot;+&quot;" />
+    </inputs>
+    <onsuccess>3d060092-b18d-43c4-864b-8f3b9dd2be10</onsuccess>
+    <resource object="CalculatorVBO" action="Click Button (Requires Button Text)" />
+  </stage>
+  <stage stageid="09110126-2a6b-441c-85fe-e968bedf69cb" name="Press =" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>135</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="Button Text" narrative="text of button to be clicked" expr="&quot;=&quot;" />
+    </inputs>
+    <onsuccess>c4fc1324-78df-4365-8733-5ccc9af3b410</onsuccess>
+    <resource object="CalculatorVBO" action="Click Button (Requires Button Text)" />
+  </stage>
+  <stage stageid="c4fc1324-78df-4365-8733-5ccc9af3b410" name="Result" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="number" name="Result" stage="Result" />
+    </outputs>
+    <onsuccess>86f0d90d-1e93-4459-9ccf-8561e1868a5f</onsuccess>
+    <resource object="CalculatorVBO" action="Read Value" />
+  </stage>
+  <stage stageid="480e9291-999f-4226-85ea-c1e0e0730b14" name="Result" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>360</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

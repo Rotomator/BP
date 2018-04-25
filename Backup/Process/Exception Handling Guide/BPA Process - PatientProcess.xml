@@ -1,0 +1,453 @@
+﻿<process name="PatientProcess" version="1.0" bpversion="5.0.10.0" narrative="" preferredid="0f721893-e722-45bd-a561-3aca2a315654">
+  <view>
+    <camerax>-127</camerax>
+    <cameray>735</cameray>
+    <zoom version="2">0.9375</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="a9900b10-a8e9-4095-82a9-6c3cd0724392" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>72bd2fe1-8907-42bc-8f5d-df939192ca6e</onsuccess>
+  </stage>
+  <stage stageid="d01c8df5-b6b2-411d-a8b8-6633280886eb" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>1095</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="619f7664-50e6-4a78-9698-df4827401311" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-855</displayx>
+    <displayy>195</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="042994aa-afb0-4486-9527-337e035b7b05" name="Coll1" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>-735</displayx>
+    <displayy>375</displayy>
+    <displaywidth>120</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Patient ID" type="text" />
+      <field name="Date of Birth" type="date" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="Patient ID" type="text" value="12345678" />
+        <field name="Date of Birth" type="date" value="1989/02/01" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="23456789" />
+        <field name="Date of Birth" type="date" value="1989/02/02" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="34567891" />
+        <field name="Date of Birth" type="date" value="1989/02/03" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="45678912" />
+        <field name="Date of Birth" type="date" value="1989/02/04" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="56789123" />
+        <field name="Date of Birth" type="date" value="2001/02/05" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="6789123" />
+        <field name="Date of Birth" type="date" value="2005/02/06" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="7891234" />
+        <field name="Date of Birth" type="date" value="1989/02/07" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="891234" />
+        <field name="Date of Birth" type="date" value="1989/02/08" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="912345" />
+        <field name="Date of Birth" type="date" value="1989/02/09" />
+      </row>
+      <row>
+        <field name="Patient ID" type="text" value="01234567" />
+        <field name="Date of Birth" type="date" value="1900/02/10" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="a7b889f0-b4bc-478a-b653-05e6153b6345" name="Add to Q" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-990</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Queue Name" narrative="The name of the queue to add items to" expr="&quot;PatientQ&quot;" />
+      <input type="collection" name="Data" narrative="A collection containing the data, one row for each item to be added" expr="[Coll1]" />
+      <input type="datetime" name="Defer Until" narrative="Optionally, the date/time the new item(s) should be deferred until" expr="" />
+      <input type="number" name="Priority" narrative="Optionally, the priority for the new item(s). Lower numbers represent higher priorities. The default is 0." expr="" />
+      <input type="text" name="Tags" narrative="Optionally, a semi-colon-separated set of tags to apply to the queue item(s)" expr="" />
+      <input type="text" name="Status" narrative="Optionally, the initial status required of the work queue item(s) " expr="" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="Item IDs" narrative="The IDs of the items which have been added to the queue, in the order of the collection of data passed that was input" stage="Item IDs" />
+    </outputs>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Add To Queue" />
+  </stage>
+  <stage stageid="72bd2fe1-8907-42bc-8f5d-df939192ca6e" name="Next Item" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Queue Name" narrative="The name of the queue to add items to" expr="&quot;PatientQ&quot;" />
+      <input type="text" name="Key Filter" narrative="Optionally, a key value to filter by. Only items with this key value will be considered." expr="" />
+      <input type="text" name="Tag Filter" narrative="Optionally, a tag mask to filter by. This can consist of any number of tag searches - each term can be separated by a semi-colon and they are all applied to the search (ie. they are AND'ed terms not OR'ed terms). For example, &quot;Account: Joint; -Balance: Overdrawn; Card: *Visa*&quot; will include any items which match all the terms, ie. every item must have an 'Account: Joint' tag applied, no item can have a 'Balance: Overdrawn' tag applied, every item must have a tag applied which starts with 'Card: ' and then contains the text 'Visa'." expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Item ID" narrative="The ID of the item retrieved - empty if there are none available." stage="Item ID" />
+      <output type="collection" name="Data" narrative="The data associated with the item - a single collection row." stage="Data" />
+      <output type="text" name="Status" narrative="The status of the item." stage="Status" />
+      <output type="number" name="Attempts" narrative="The number of attempts already made to work this item." stage="Attempts" />
+    </outputs>
+    <onsuccess>1d029597-472f-4bc1-9331-e7e99248bb76</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Get Next Item" />
+  </stage>
+  <stage stageid="8253c146-e62f-42ca-98e4-4b3d3e069c92" name="Item IDs" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>-855</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a84b820c-8414-4b5f-9e18-6de42ce17c11" name="Item ID" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-75</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="be808acc-88a1-4dbb-b357-b779c20acf41" name="Data" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>-165</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="849dbf50-95d8-406c-98ab-7fa576a27e08" name="Status" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="06bea8d7-438f-46af-ae01-2d32d1f7c8d2" name="Attempts" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-255</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="222dd132-60d1-49ce-8bd7-8ec1e822b32f" name="Stage2" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-525</displayx>
+    <displayy>330</displayy>
+    <displaywidth>600</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="02e6b924-c4ec-488f-b682-3ea9e03dd4ae" name="Stage1" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-750</displayx>
+    <displayy>-1065</displayy>
+    <displaywidth>465</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="76e476cd-cc40-4246-86b4-cffe95dbd95f" name="Mark Complete" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>945</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Item ID" narrative="The ID of the item to mark" expr="[Item ID]" />
+    </inputs>
+    <onsuccess>d01c8df5-b6b2-411d-a8b8-6633280886eb</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Mark Completed" />
+  </stage>
+  <stage stageid="617378d9-09b3-45f7-afcd-f927c755d109" name="Is Adult ?" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>840</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[Age In Years]&gt;=18" />
+    <ontrue>76e476cd-cc40-4246-86b4-cffe95dbd95f</ontrue>
+    <onfalse>f43e8cc1-d731-4604-a85e-5e178990a178</onfalse>
+  </stage>
+  <stage stageid="f43e8cc1-d731-4604-a85e-5e178990a178" name="Exception1" type="Exception">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>840</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="Business Exception" detail="&quot;Juvenille Case&quot;" />
+  </stage>
+  <stage stageid="1d029597-472f-4bc1-9331-e7e99248bb76" name="Get Age" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>525</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b83c825a-0c6f-4bd5-906b-221ff8c6e1e9</onsuccess>
+    <calculation expression="DateDiff(0, [Data.Date of Birth], Today())" stage="Age In Years" />
+  </stage>
+  <stage stageid="68512d5e-d230-4f0a-aa35-c5db33e36f1f" name="Age In Years" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-285</displayx>
+    <displayy>525</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="3b29512d-61a3-4d67-9c51-c2e05941fdc1" name="Recover1" type="Recover">
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>720</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>f625cad6-ea88-4569-b936-827461cb78e6</onsuccess>
+  </stage>
+  <stage stageid="97eb9e08-7ab1-4208-836c-0b2337e5a5ed" name="Resume1" type="Resume">
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>1035</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>10e1a251-4f9f-46eb-8d55-0ee8fea1b018</onsuccess>
+  </stage>
+  <stage stageid="51548611-8f25-44e5-884f-1311c4db30fa" name="Mark Exception With Exception Details" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>480</displayx>
+    <displayy>1035</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Item ID" narrative="The ID of the item to mark" expr="[Item ID]" />
+      <input type="text" name="Exception Reason" narrative="A description of the reason for the exception" expr="ExceptionDetail()" />
+      <input type="flag" name="Retry" narrative="Whether or not to retry the item, up to the maximum number of attempts specified for the queue. Optional - if not specified, the item will be retried" expr="" />
+      <input type="flag" name="Keep Locked" narrative="Whether or not the clone of the item should remain locked after the exception has been registered and the item is retried. Optional - default is False" expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="New Item ID" narrative="The Item ID of the newly cloned item. This item will be locked if 'Keep Locked' is True. This will be empty if no item was cloned (ie. the item was not retried." stage="" />
+    </outputs>
+    <onsuccess>97eb9e08-7ab1-4208-836c-0b2337e5a5ed</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Mark Exception" />
+  </stage>
+  <stage stageid="4791b1de-c339-4ba1-a21c-19ad4b510fb9" name="Stage4" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-480</displayx>
+    <displayy>480</displayy>
+    <displaywidth>255</displaywidth>
+    <displayheight>75</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="20012e66-a04c-490c-920e-d904bc74aa50" name="Is Person ID Valid ?" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>735</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[length]&gt;=8" />
+    <ontrue>617378d9-09b3-45f7-afcd-f927c755d109</ontrue>
+    <onfalse>a1ee206c-4634-457f-a685-00da1002bd0c</onfalse>
+  </stage>
+  <stage stageid="a1ee206c-4634-457f-a685-00da1002bd0c" name="Exception1" type="Exception">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>735</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="Data Exception" detail="&quot;Invalid Person ID&quot;" />
+  </stage>
+  <stage stageid="b83c825a-0c6f-4bd5-906b-221ff8c6e1e9" name="Get Patient ID length" type="Calculation">
+    <narrative>
+    </narrative>
+    <displayx>-405</displayx>
+    <displayy>615</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>20012e66-a04c-490c-920e-d904bc74aa50</onsuccess>
+    <calculation expression="Len([Data.Patient ID])" stage="length" />
+  </stage>
+  <stage stageid="d55e1352-26c7-4bde-8b14-a43c73f9aaa1" name="Stage5" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-480</displayx>
+    <displayy>570</displayy>
+    <displaywidth>255</displaywidth>
+    <displayheight>75</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="936276b4-c55e-4ae2-9f11-c2704547d5a7" name="length" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>-285</displayx>
+    <displayy>615</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="f30c895a-a214-4e3f-a442-c8a8c32c1cd9" name="Stage3" type="Block">
+    <narrative>
+    </narrative>
+    <displayx>-1050</displayx>
+    <displayy>285</displayy>
+    <displaywidth>405</displaywidth>
+    <displayheight>165</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="83113656-e251-42bb-8b17-978ae861b13e" name="Mark Exception With Exception Details" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>1035</displayy>
+    <displaywidth>210</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="Item ID" narrative="The ID of the item to mark" expr="[Item ID]" />
+      <input type="text" name="Exception Reason" narrative="A description of the reason for the exception" expr="ExceptionDetail()" />
+      <input type="flag" name="Retry" narrative="Whether or not to retry the item, up to the maximum number of attempts specified for the queue. Optional - if not specified, the item will be retried" expr="" />
+      <input type="flag" name="Keep Locked" narrative="Whether or not the clone of the item should remain locked after the exception has been registered and the item is retried. Optional - default is False" expr="" />
+    </inputs>
+    <outputs>
+      <output type="text" name="New Item ID" narrative="The Item ID of the newly cloned item. This item will be locked if 'Keep Locked' is True. This will be empty if no item was cloned (ie. the item was not retried." stage="" />
+    </outputs>
+    <onsuccess>97eb9e08-7ab1-4208-836c-0b2337e5a5ed</onsuccess>
+    <resource object="Blueprism.Automate.clsWorkQueuesActions" action="Mark Exception" />
+  </stage>
+  <stage stageid="f625cad6-ea88-4569-b936-827461cb78e6" name="Is a data exception" type="Decision">
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>900</displayy>
+    <displaywidth>90</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="ExceptionType() = &quot;Data Exception&quot;" />
+    <ontrue>d485fcb6-4e64-4349-b018-84c3e685c046</ontrue>
+    <onfalse>90600b83-0561-48f5-bb53-7f087b578799</onfalse>
+  </stage>
+  <stage stageid="d485fcb6-4e64-4349-b018-84c3e685c046" name="Anchor1" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>0</displayx>
+    <displayy>900</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>83113656-e251-42bb-8b17-978ae861b13e</onsuccess>
+  </stage>
+  <stage stageid="90600b83-0561-48f5-bb53-7f087b578799" name="Anchor2" type="Anchor">
+    <narrative>
+    </narrative>
+    <displayx>480</displayx>
+    <displayy>900</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>51548611-8f25-44e5-884f-1311c4db30fa</onsuccess>
+  </stage>
+  <stage stageid="10e1a251-4f9f-46eb-8d55-0ee8fea1b018" name="End1" type="End">
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>1110</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+</process>

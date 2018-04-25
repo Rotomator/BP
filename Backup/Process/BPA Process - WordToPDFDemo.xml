@@ -1,0 +1,125 @@
+﻿<process name="WordToPDFDemo" version="1.0" bpversion="5.0.10.0" narrative="using inbuild word vbo object to conver to pdf" preferredid="536e3da4-7eea-4c19-8391-1957d98512f8">
+  <view>
+    <camerax>0</camerax>
+    <cameray>114</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="20f1fc0d-fbf4-45ca-b2f7-32391f0721a1" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>7b93968d-e487-4b08-b058-f14c79b214bd</onsuccess>
+  </stage>
+  <stage stageid="6675eb9b-1f62-46a5-86cb-eeb66e63e7d7" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="ec5623a9-104e-49ae-93bd-d3d298df4d0d" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="7b93968d-e487-4b08-b058-f14c79b214bd" name="Create word instance" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="number" name="handle" stage="handle" />
+    </outputs>
+    <onsuccess>daccbdf6-e34a-4ecc-aa2b-047780d592a7</onsuccess>
+    <resource object="MS Word VBO" action="Create Instance" />
+  </stage>
+  <stage stageid="c93835ab-4670-48a7-b458-de95d2e4f60d" name="handle" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>-45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="eb9ff3ed-37d9-447e-af33-f4dc9cf93097" name="Convert to word" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" expr="&quot;F:\Selenium\RPA\Training\HandsOn\WordToPDF\icare.pdf&quot;" />
+      <input type="text" name="documentname" expr="[Document Name]" />
+      <input type="number" name="handle" expr="[handle]" />
+    </inputs>
+    <onsuccess>f65d9c02-8dcd-4fc5-91ac-a7a90998a97d</onsuccess>
+    <resource object="MS Word VBO" action="ExportPDF" />
+  </stage>
+  <stage stageid="f65d9c02-8dcd-4fc5-91ac-a7a90998a97d" name="detach instance" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" narrative="The handle to the instance to be detached from" expr="[handle]" />
+    </inputs>
+    <onsuccess>6675eb9b-1f62-46a5-86cb-eeb66e63e7d7</onsuccess>
+    <resource object="MS Word VBO" action="Detach Instance" />
+  </stage>
+  <stage stageid="daccbdf6-e34a-4ecc-aa2b-047780d592a7" name="Open Document" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="number" name="handle" expr="[handle]" />
+      <input type="text" name="File Name" expr="&quot;F:\Selenium\RPA\Training\HandsOn\WordToPDF\icare.docx&quot;" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Document Name" stage="Document Name" />
+    </outputs>
+    <onsuccess>eb9ff3ed-37d9-447e-af33-f4dc9cf93097</onsuccess>
+    <resource object="MS Word VBO" action="Open" />
+  </stage>
+  <stage stageid="3a212b85-57f3-4c30-967f-c342b7bef1d1" name="Document Name" type="Data">
+    <narrative>
+    </narrative>
+    <displayx>240</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
